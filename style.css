@@ -1,12 +1,14 @@
 :root {
-  --bg: #f6f3ee;
-  --surface: #fffdf8;
-  --text: #1f1d1a;
-  --muted: #635d54;
-  --primary: #0f6f63;
-  --primary-dark: #0a544b;
-  --accent: #d7a447;
-  --border: #e6dfd3;
+  --bg: #070b14;
+  --bg-soft: #0e1626;
+  --surface: #121d31;
+  --surface-2: #182742;
+  --text: #e6f0ff;
+  --muted: #9db1d3;
+  --primary: #4dd0e1;
+  --primary-dark: #2ea7bc;
+  --accent: #7af59a;
+  --border: #253555;
 }
 
 * {
@@ -19,10 +21,11 @@ html {
 
 body {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "JetBrains Mono", monospace;
   color: var(--text);
-  background: radial-gradient(circle at 10% 10%, #fff7e3 0, transparent 40%),
-    radial-gradient(circle at 90% 20%, #d5efe8 0, transparent 35%),
+  background:
+    radial-gradient(circle at 12% 8%, rgba(77, 208, 225, 0.12) 0, transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(122, 245, 154, 0.12) 0, transparent 28%),
     var(--bg);
   line-height: 1.6;
 }
@@ -35,24 +38,26 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  background: rgba(246, 243, 238, 0.8);
+  z-index: 20;
+  backdrop-filter: blur(9px);
+  background: rgba(7, 11, 20, 0.8);
   border-bottom: 1px solid var(--border);
 }
 
 .nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
 }
 
 .logo {
-  font-family: "Syne", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--text);
   text-decoration: none;
+  color: var(--text);
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .logo span {
@@ -69,17 +74,28 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text);
-  font-weight: 500;
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.2rem;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 
-.hero {
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.hero,
+.page-hero {
   position: relative;
   overflow: hidden;
   padding: 6.5rem 0 5rem;
 }
 
-.hero-content {
+.hero-content,
+.page-hero-content {
   position: relative;
   z-index: 2;
   max-width: 760px;
@@ -87,51 +103,72 @@ body {
 
 .eyebrow {
   display: inline-block;
+  margin-bottom: 0.6rem;
+  color: var(--accent);
   font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--primary);
   font-weight: 700;
-  margin-bottom: 0.6rem;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Syne", sans-serif;
-  line-height: 1.15;
   margin: 0;
+  line-height: 1.15;
+  font-family: "Orbitron", sans-serif;
 }
 
 h1 {
-  font-size: clamp(2.1rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.8rem);
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.typed-heading::after {
+  content: "";
+  display: inline-block;
+  width: 0.08em;
+  height: 0.95em;
+  margin-left: 0.12em;
+  background: var(--primary);
+  animation: blink 0.9s steps(1, end) infinite;
+  vertical-align: -0.1em;
+}
+
+.typed-heading.done::after {
+  animation: none;
+  opacity: 0.5;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-text {
-  font-size: 1.1rem;
-  color: var(--muted);
   max-width: 62ch;
+  color: var(--muted);
 }
 
 .hero-actions {
+  margin-top: 1.8rem;
   display: flex;
   gap: 0.9rem;
-  margin-top: 1.8rem;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.72rem 1.1rem;
-  border-radius: 999px;
   text-decoration: none;
+  border-radius: 999px;
+  padding: 0.72rem 1.1rem;
   font-weight: 700;
-  transition: transform 180ms ease, background 180ms ease;
+  transition: transform 160ms ease, background 160ms ease;
 }
 
 .btn:hover {
@@ -140,7 +177,7 @@ h2 {
 
 .btn-primary {
   background: var(--primary);
-  color: #ffffff;
+  color: #021218;
 }
 
 .btn-primary:hover {
@@ -155,16 +192,31 @@ h2 {
 .hero-shape {
   position: absolute;
   border-radius: 999px;
-  filter: blur(2px);
+  filter: blur(3px);
 }
 
+.hero-shape-one {
+  width: 290px;
+  height: 290px;
+  background: rgba(77, 208, 225, 0.24);
+  right: -80px;
+  top: 90px;
+}
+
+.hero-shape-two {
+  width: 210px;
+  height: 210px;
+  background: rgba(122, 245, 154, 0.18);
+  right: 220px;
+  bottom: -30px;
+}
 
 .section {
-  padding: 4.6rem 0;
+  padding: 4.5rem 0;
 }
 
 .section-alt {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(24, 39, 66, 0.5);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -180,20 +232,20 @@ h2 {
 }
 
 .project-card {
-  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, var(--surface), var(--surface-2));
   padding: 1.2rem;
 }
 
 .project-tag {
   display: inline-block;
   border-radius: 999px;
-  padding: 0.2rem 0.58rem;
-  background: #ebf7f5;
-  color: var(--primary);
-  font-size: 0.78rem;
+  padding: 0.18rem 0.58rem;
+  font-size: 0.76rem;
   font-weight: 700;
+  color: #04111f;
+  background: var(--accent);
 }
 
 .project-card h3 {
@@ -213,9 +265,9 @@ h2 {
 .project-link {
   display: inline-block;
   margin-top: 0.8rem;
-  color: var(--primary-dark);
-  font-weight: 700;
+  color: var(--primary);
   text-decoration: none;
+  font-weight: 700;
 }
 
 .skills-list {
@@ -230,19 +282,15 @@ h2 {
 .skills-list li {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 0.75rem 0.9rem;
+  color: var(--text);
   font-weight: 600;
 }
 
-.about p {
-  max-width: 70ch;
-  color: var(--muted);
-}
-
 .section-contact {
-  background: linear-gradient(120deg, #0f6f63, #0a544b);
-  color: #ffffff;
+  background: linear-gradient(120deg, #081422, #0d2136);
+  border-top: 1px solid var(--border);
 }
 
 .contact {
@@ -250,16 +298,16 @@ h2 {
 }
 
 .contact p {
-  opacity: 0.92;
+  color: var(--muted);
 }
 
-.contact .btn-primary {
-  background: #ffffff;
-  color: var(--primary-dark);
+.page-body {
+  min-height: 100vh;
 }
 
-.contact .btn-primary:hover {
-  background: #f2f2f2;
+.page-copy {
+  color: var(--muted);
+  max-width: 70ch;
 }
 
 @media (max-width: 900px) {

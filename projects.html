@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIXA | Portfolio</title>
-  <meta name="description" content="Personal portfolio website showcasing projects and skills.">
+  <title>MIXA | Projects</title>
+  <meta name="description" content="Projects by MIXA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-body">
   <header class="site-header">
     <nav class="container nav">
       <a href="index.html" class="logo">MIXA<span>.</span></a>
       <ul class="nav-links">
-        <li><a href="projects.html">Projects</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -23,18 +23,11 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <p class="eyebrow">Fast, Professional and User-Focused</p>
-        <h1 class="typed-heading" data-text="I build web apps that are fast, useful, and easy to use."></h1>
-        <p class="hero-text">
-          I am a developer focused on turning ideas into real products.
-          This site highlights selected projects I designed and built.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="projects.html">View Projects</a>
-          <a class="btn btn-outline" href="contact.html">Get In Touch</a>
-        </div>
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <p class="eyebrow">Projects</p>
+        <h1>Selected work and shipped products.</h1>
+        <p class="page-copy">A focused list of projects that show practical problem solving, clean implementation, and measurable outcomes.</p>
       </div>
       <div class="hero-shape hero-shape-one" aria-hidden="true"></div>
       <div class="hero-shape hero-shape-two" aria-hidden="true"></div>
@@ -42,10 +35,6 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Work</p>
-          <h2>Featured Projects</h2>
-        </div>
         <div class="project-grid">
           <article class="project-card">
             <div class="project-tag">Full-Stack</div>
@@ -69,30 +58,6 @@
             <a href="#" class="project-link">Read Case Study</a>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Toolkit</p>
-          <h2>Skills</h2>
-        </div>
-        <ul class="skills-list">
-          <li>JavaScript / TypeScript</li>
-          <li>React / Next.js</li>
-          <li>Node.js / Express</li>
-          <li>SQL / NoSQL Databases</li>
-          <li>REST APIs</li>
-          <li>Git / GitHub</li>
-        </ul>
-      </div>
-    </section>
-    <section class="section section-contact">
-      <div class="container contact">
-        <h2>Let's build something great.</h2>
-        <p>Open to freelance, remote roles, and collaboration.</p>
-        <a class="btn btn-primary" href="contact.html">Open Contact Page</a>
       </div>
     </section>
   </main>
