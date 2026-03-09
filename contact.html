@@ -27,16 +27,44 @@
       <div class="container page-hero-content">
         <p class="eyebrow">Contact</p>
         <h1>Let's discuss your next project.</h1>
-        <p class="page-copy">For freelance work, collaboration, or a full-time role, reach out and share what you are building.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:you@example.com">you@example.com</a>
-          <a class="btn btn-outline" href="projects.html">View Projects</a>
-        </div>
+        <p class="page-copy">For freelance work, collaboration, or a full-time role, send a quick message.</p>
       </div>
-      <div class="hero-shape hero-shape-one" aria-hidden="true"></div>
-      <div class="hero-shape hero-shape-two" aria-hidden="true"></div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <form class="contact-form" action="#" method="post">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Project inquiry" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <p class="eyebrow">Start A Project</p>
+        <h2>Need a developer for your next build?</h2>
+      </div>
+      <div class="footer-actions">
+        <a class="btn btn-primary" href="mailto:you@example.com">Email Directly</a>
+        <a class="btn btn-outline" href="projects.html">See My Work</a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
