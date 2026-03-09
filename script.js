@@ -10,7 +10,7 @@
     if (i <= text.length) {
       heading.textContent = text.slice(0, i);
       i += 1;
-      setTimeout(typeNext, 35);
+      setTimeout(typeNext, 25);
       return;
     }
     heading.classList.add('done');
