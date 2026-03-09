@@ -43,7 +43,6 @@ body {
 
 .nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
 }
@@ -159,21 +158,6 @@ h2 {
   filter: blur(2px);
 }
 
-.hero-shape-one {
-  width: 260px;
-  height: 260px;
-  background: rgba(215, 164, 71, 0.35);
-  right: -60px;
-  top: 70px;
-}
-
-.hero-shape-two {
-  width: 180px;
-  height: 180px;
-  background: rgba(15, 111, 99, 0.23);
-  right: 210px;
-  bottom: -20px;
-}
 
 .section {
   padding: 4.6rem 0;
